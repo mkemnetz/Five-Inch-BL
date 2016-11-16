@@ -23,6 +23,8 @@ close all;
 %     pause(0.25); 
 % end
 
+%test
+
 %%
 loops = 500;
 Mov(loops) = struct('cdata',[],'colormap',[]);
