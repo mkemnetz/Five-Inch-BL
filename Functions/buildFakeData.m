@@ -53,23 +53,23 @@ if iscell(y)
     y = cat(3,y{:});
 end
 
-data.zero.phase  = WF(:, 1:18, 0);
-data.one.phase   = WF(:, 10:27, 0);
-data.two.phase   = WF(:, 18:35, 0);
-data.three.phase = WF(:, 27:45, 0);
-data.four.phase  = WF(:, 35:52, 0);
+data.zero.phase  = WF(:, 1:18, :);
+data.one.phase   = WF(:, 10:27, :);
+data.two.phase   = WF(:, 18:35, :);
+data.three.phase = WF(:, 27:45, :);
+data.four.phase  = WF(:, 35:52, :);
 
-data.zero.x  = x(:, 1:18, 0);
-data.one.x   = x(:, 10:27, 0);
-data.two.x   = x(:, 18:35, 0);
-data.three.x = x(:, 27:45, 0);
-data.four.x  = x(:, 35:52, 0);
+data.zero.x  = x(:, 1:18, :);
+data.one.x   = x(:, 10:27, :);
+data.two.x   = x(:, 18:35, :);
+data.three.x = x(:, 27:45, :);
+data.four.x  = x(:, 35:52, :);
 
-data.zero.y  = y(:, 1:18, 0);
-data.one.y   = y(:, 10:27, 0);
-data.two.y   = y(:, 18:35, 0);
-data.three.y = y(:, 27:45, 0);
-data.four.y  = y(:, 35:52, 0);
+data.zero.y  = y(:, 1:18, :);
+data.one.y   = y(:, 10:27, :);
+data.two.y   = y(:, 18:35, :);
+data.three.y = y(:, 27:45, :);
+data.four.y  = y(:, 35:52, :);
 
 [ data.zero.phase, ~ ] = removeTTP( data.zero.phase, ...
                             data.zero.x, data.zero.y );
