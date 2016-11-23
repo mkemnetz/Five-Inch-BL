@@ -11,7 +11,7 @@ WF      = data.zero.phase;
 NN      = size(WF, 3);
 WFzero  = zeros(size(POD_Modes, 1), size(POD_Modes, 2), size(POD_Modes, 3));
 WF_zero = zeros(size(POD_Modes, 1), size(POD_Modes, 2), NN);
-for t = NN
+for t = 1:NN
     if getappdata(h,'canceling')
         break;
     end
@@ -19,7 +19,7 @@ for t = NN
         waitbar(t/NN,h)
     end
     for n = 1:N
-        WFzero(:, :, n) = a_n_zero(1, n).*POD_Modes(:, :, n);
+        WFzero(:, :, n) = a_n_zero(t, n).*POD_Modes(:, :, n);
     end
     WFzero           = mean(WFzero, 3);
     WF_zero(:, :, t) = WFzero;
@@ -42,7 +42,7 @@ WF      = data.one.phase;
 NN      = size(WF, 3);
 WFone  = zeros(size(POD_Modes, 1), size(POD_Modes, 2), size(POD_Modes, 3));
 WF_one = zeros(size(POD_Modes, 1), size(POD_Modes, 2), NN);
-for t = NN
+for t = 1:NN
     if getappdata(h,'canceling')
         break;
     end
@@ -50,7 +50,7 @@ for t = NN
         waitbar(t/NN,h)
     end
     for n = 1:N
-        WFone(:, :, n) = a_n_one(1, n).*POD_Modes(:, :, n);
+        WFone(:, :, n) = a_n_one(t, n).*POD_Modes(:, :, n);
     end
     WFone           = mean(WFone, 3);
     WF_one(:, :, t) = WFone;
@@ -73,7 +73,7 @@ WF      = data.two.phase;
 NN      = size(WF, 3);
 WFtwo  = zeros(size(POD_Modes, 1), size(POD_Modes, 2), size(POD_Modes, 3));
 WF_two = zeros(size(POD_Modes, 1), size(POD_Modes, 2), NN);
-for t = NN
+for t = 1:NN
     if getappdata(h,'canceling')
         break;
     end
@@ -81,7 +81,7 @@ for t = NN
         waitbar(t/NN,h)
     end
     for n = 1:N
-        WFtwo(:, :, n) = a_n_two(1, n).*POD_Modes(:, :, n);
+        WFtwo(:, :, n) = a_n_two(t, n).*POD_Modes(:, :, n);
     end
     WFtwo           = mean(WFtwo, 3);
     WF_two(:, :, t) = WFtwo;
@@ -104,7 +104,7 @@ WF      = data.three.phase;
 NN      = size(WF, 3);
 WFthree  = zeros(size(POD_Modes, 1), size(POD_Modes, 2), size(POD_Modes, 3));
 WF_three = zeros(size(POD_Modes, 1), size(POD_Modes, 2), NN);
-for t = NN
+for t = 1:NN
     if getappdata(h,'canceling')
         break;
     end
@@ -112,7 +112,7 @@ for t = NN
         waitbar(t/NN,h)
     end
     for n = 1:N
-        WFthree(:, :, n) = a_n_three(1, n).*POD_Modes(:, :, n);
+        WFthree(:, :, n) = a_n_three(t, n).*POD_Modes(:, :, n);
     end
     WFthree           = mean(WFthree, 3);
     WF_three(:, :, t) = WFthree;
@@ -135,7 +135,7 @@ WF      = data.four.phase;
 NN      = size(WF, 3);
 WFfour  = zeros(size(POD_Modes, 1), size(POD_Modes, 2), size(POD_Modes, 3));
 WF_four = zeros(size(POD_Modes, 1), size(POD_Modes, 2), NN);
-for t = NN
+for t = 1:NN
     if getappdata(h,'canceling')
         break;
     end
@@ -143,7 +143,7 @@ for t = NN
         waitbar(t/NN,h)
     end
     for n = 1:N
-        WFfour(:, :, n) = a_n_four(1, n).*POD_Modes(:, :, n);
+        WFfour(:, :, n) = a_n_four(t, n).*POD_Modes(:, :, n);
     end
     WFfour           = mean(WFfour, 3);
     WF_four(:, :, t) = WFfour;

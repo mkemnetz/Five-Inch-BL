@@ -102,3 +102,19 @@ grid on;
 grid minor;
 
 %%
+figure(); 
+set(gcf,'units','centimeters','position',[0 0 1.2*8 8]);
+plot(4:40, e2_1(1, 4:40));
+hold on;
+plot(4:40, e2_2(1, 4:40));
+plot(4:40, e2_3(1, 4:40));
+plot(4:40, e2_4(1, 4:40));
+plot([0 40],[0.85 0.85])
+xlabel('$\Delta i$', 'interpreter', 'latex'); 
+ylabel('$Uc/U_\infty$', 'interpreter', 'latex'); 
+hleg = legend('$1 \delta$', '$2 \delta$', '$3 \delta$', '$4 \delta$');
+hleg.Interpreter  = 'latex';
+hleg.Location     = 'northeast';
+hleg.Title.String = 'Separation'; 
+grid on;
+grid minor;
