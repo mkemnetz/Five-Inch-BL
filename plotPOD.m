@@ -1,14 +1,15 @@
 podplot = figure;
 subplot(2,2,1);
 imagesc(POD_Modes(:,:,1));
-axis equal;
-axis off;
+%     axis equal;
+    axis tight;
 % title(['Mode 1, Energy = ' num2str(energy(1))]);
 
 subplot(2,2,2);
 imagesc(POD_Modes(:,:,2));
-axis equal;
-axis off;
+%     axis equal;
+    axis tight;
+%     axis off;
 % title(['Mode 2, Energy = ' num2str(energy(2))]);
 
 % subplot(2,2,3);
@@ -42,12 +43,12 @@ figure();
 
 for i = 1:N
     subplot(5,4,i);
-    surf(POD_Modes(2:32,7:60,i), 'EdgeColor', 'none');
+    surf(POD_Modes(:,:,i), 'EdgeColor', 'none');
     view(2);
     colormap jet;
-    axis equal;
+%     axis equal;
     axis tight;
-    axis off;
+%     axis off;
     title(['Mode: ' num2str(i)]);
 
 end

@@ -1,4 +1,8 @@
 %%
+M_inf = 0.2;
+T_t   = 78.4;
+fsamp = 40300;
+
 %%
 params.N    = 1000;
 params.fine = 200;
@@ -67,18 +71,20 @@ for i = 1:100
         index = index+1;
     end
     e2_1_POD(2, i) = mean(error1(1, :));
-    e2_1_POD(1, i) = (1*0.0156)/(i*machToVel(0.3, 75.3)*(1/40000));
+    e2_1_POD(1, i) = (1*0.0156)/(i*machToVel(M_inf, T_t)*(1/fsamp));
     
     e2_2_POD(2, i) = mean(error2(1, :));
-    e2_2_POD(1, i) = (2*0.0156)/(i*machToVel(0.3, 75.3)*(1/40000));
+    e2_2_POD(1, i) = (2*0.0156)/(i*machToVel(M_inf, T_t)*(1/fsamp));
     
     e2_3_POD(2, i) = mean(error3(1, :));
-    e2_3_POD(1, i) = (3*0.0156)/(i*machToVel(0.3, 75.3)*(1/40000));
+    e2_3_POD(1, i) = (3*0.0156)/(i*machToVel(M_inf, T_t)*(1/fsamp));
     
     e2_4_POD(2, i) = mean(error4(1, :));
-    e2_4_POD(1, i) = (4*0.0156)/(i*machToVel(0.3, 75.3)*(1/40000));
+    e2_4_POD(1, i) = (4*0.0156)/(i*machToVel(M_inf, T_t)*(1/fsamp));
 end
+
 %%
+s = sprintf('first %i modes', NumberOfModes);
 figure();
 set(gcf,'units','centimeters','position',[0 0 1.2*8 8]);
 plot(e2_1_POD(1, :), e2_1_POD(2, :)); 
@@ -87,7 +93,7 @@ plot(e2_2_POD(1, :), e2_2_POD(2, :));
 plot(e2_3_POD(1, :), e2_3_POD(2, :)); 
 plot(e2_4_POD(1, :), e2_4_POD(2, :)); 
 axis([0.4 1.4 0 1.5]); 
-title('Error vs. $Uc/U_\infty$', 'interpreter', 'latex'); 
+title(['Error vs. $Uc/U_\infty$, ' s], 'interpreter', 'latex'); 
 xlabel('$Uc/U_\infty$', 'interpreter', 'latex'); 
 ylabel('$\Sigma(U_c)$', 'interpreter', 'latex'); 
 hleg = legend('$1 \delta$', '$2 \delta$', '$3 \delta$', '$4 \delta$');

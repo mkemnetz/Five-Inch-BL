@@ -1,5 +1,10 @@
 % clear all
 close all
+multiWaitbar( 'Computing Global Error Directly (All Modes)...', 'Busy');
+%%
+M_inf = 0.2;
+T_t   = 78.4;
+fsamp = 40300;
 
 %%
 params.N    = 1000;
@@ -27,13 +32,19 @@ OPDrms = mean(OPDrms);
 
 
 %%
+multiWaitbar( 'Computing Global Error Directly (All Modes)...', 'Reset');
+
 e2_1         = zeros(2, 100);
 e2_2         = zeros(2, 100);
 e2_3         = zeros(2, 100);
 e2_4         = zeros(2, 100);
 N            = params.N;
-for i = 1:100
-    delay       = i;
+delaysTest   = 100;
+for i = 1:delaysTest
+    if (mod(i, 10) ==0)
+        multiWaitbar( 'Computing Global Error Directly (All Modes)...', i/delaysTest);
+    end
+    delay  = i;
     
     error1 = zeros(1, N-delay);
     error2 = zeros(1, N-delay);
@@ -68,16 +79,16 @@ for i = 1:100
         index = index+1;
     end
     e2_1(2, i) = mean(error1(1, :));
-    e2_1(1, i) = (1*0.0156)/(i*machToVel(0.3, 75.3)*(1/40000));
+    e2_1(1, i) = (1*0.0156)/(i*machToVel(M_inf, T_t)*(1/fsamp));
     
     e2_2(2, i) = mean(error2(1, :));
-    e2_2(1, i) = (2*0.0156)/(i*machToVel(0.3, 75.3)*(1/40000));
+    e2_2(1, i) = (2*0.0156)/(i*machToVel(M_inf, T_t)*(1/fsamp));
     
     e2_3(2, i) = mean(error3(1, :));
-    e2_3(1, i) = (3*0.0156)/(i*machToVel(0.3, 75.3)*(1/40000));
+    e2_3(1, i) = (3*0.0156)/(i*machToVel(M_inf, T_t)*(1/fsamp));
     
     e2_4(2, i) = mean(error4(1, :));
-    e2_4(1, i) = (4*0.0156)/(i*machToVel(0.3, 75.3)*(1/40000));
+    e2_4(1, i) = (4*0.0156)/(i*machToVel(M_inf, T_t)*(1/fsamp));
 end
 %%
 figure();
