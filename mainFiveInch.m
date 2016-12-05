@@ -22,7 +22,8 @@ fprintf('Loading in Processed Data...\n');
 multiWaitbar( 'Loading in Processed Data...', 0.5, 'Color', 'r' );
 
 % load('/Volumes/LaCie/MATLAB/Research/Five Inch BL Experiment - Heated/Processed/F1/WF_processed.mat');  % 10-31 Data
-load('/Volumes/LaCie/MATLAB/Research/Five Inch BL Experiment - Heated/Processed/11-31/F1/F1.mat');  % 11-31 Data
+% load('/Volumes/LaCie/MATLAB/Research/Five Inch BL Experiment - Heated/Processed/11-31/F1/F1.mat');  % 11-31 Data Small
+load('/Volumes/LaCie/MATLAB/Research/Five Inch BL Experiment - Heated/Processed/11-31/F1/F1_2.mat');  % 11-31 Data Small
 
 multiWaitbar( 'Loading in Processed Data...', 1, 'Color', 'g' );
 multiWaitbar( 'Overall Progress', 'Increment', 1/9 );
