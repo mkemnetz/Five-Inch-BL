@@ -1,9 +1,9 @@
 function [data] = buildFakeData(WF, x, y) 
 %BUILDFAKEDATA - This function takes in the large 5in wavefronts and builds
-%four sets of data.  These represent separations of 0, 1, 2, and 3 boundary
+%five sets of data.  These represent separations of 0, 1, 2, 3, and 4 boundary
 %layer thicknesses.
 % 
-% Syntax:  [data] = buildfakedata(WF) 
+% Syntax:  [data] = buildFakeData(WF, x, y) 
 % 
 % Inputs: 
 %    WF - A 3D array or a cell array carrying OPD.  The third dimension is

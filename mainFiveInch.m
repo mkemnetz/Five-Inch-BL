@@ -61,8 +61,8 @@ fprintf('Computing JPOD...\n');
 multiWaitbar( 'Computing JPOD...', 0, 'Color', 'r' );
 
 clearvars -except data  program_start e2_1 e2_2 e2_3 e2_4;
-JPOD = cat(3, cat(3, cat(3, data.zero.phase, data.one.phase), data.two.phase), data.three.phase);
-[ POD_Modes, Time_Coeff, energy ] = computePOD( JPOD );
+Nmodes_plot = 100;
+computeJPOD;
 
 multiWaitbar( 'Overall Progress', 'Increment', 1/9 );
 
