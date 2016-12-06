@@ -25,19 +25,19 @@ function [data] = buildFakeData(WF, x, y)
 %           data.zero.x
 % 
 % Example: 
-%    [data] = buildFakeData(WF)  
+%    [data] = buildFakeData(WF, x, y) 
 % 
-% Other m-files required: none 
+% Other m-files required: removeTTP.m 
 % Subfunctions: none 
 % MAT-files required: none 
 % 
-% See also: none
+% See also: buildFakeJitterData.m
  
 % Author: Matthew Kemnetz 
 % Hessert Laboratory for Aerospace Research B034 
 % email: mkemnetz@nd.edu, kemnetz.m@gmail.com 
 % Website: http://www.matthewkemnetz.com 
-% November 2016; Last revision: 17-November-2016 
+% November 2016; Last revision: 6-December-2016 
 % Copyright 2016, Matthew Kemnetz, All rights reserved. 
  
 %% ------------- BEGIN CODE -------------- %% 

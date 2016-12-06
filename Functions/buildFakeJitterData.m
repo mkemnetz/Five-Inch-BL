@@ -25,19 +25,19 @@ function [data_jitter] = buildFakeJitterData(WF, x, y)
 %           data.zero.x
 % 
 % Example: 
-%    [data] = buildFakeData(WF)  
+%    [data_jitter] = buildFakeJitterData(WF, x, y)  
 % 
-% Other m-files required: none 
+% Other m-files required: removeTTP.m
 % Subfunctions: none 
 % MAT-files required: none 
 % 
-% See also: none
+% See also: buildFakeData.m
  
 % Author: Matthew Kemnetz 
 % Hessert Laboratory for Aerospace Research B034 
 % email: mkemnetz@nd.edu, kemnetz.m@gmail.com 
 % Website: http://www.matthewkemnetz.com 
-% November 2016; Last revision: 17-November-2016 
+% December 2016; Last revision: 6-December-2016  
 % Copyright 2016, Matthew Kemnetz, All rights reserved. 
  
 %% ------------- BEGIN CODE -------------- %% 
