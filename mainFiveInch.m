@@ -12,7 +12,7 @@ program_start = tic;
 % 1 => 10-31 Data
 % 2 => 11-31 Data Small
 % 3 => 11-31 Data Full
-data_flag     = 3;
+data_flag     = 2;
 
 
 %% 2

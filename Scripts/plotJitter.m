@@ -68,8 +68,9 @@ rho_sl = 1.225;
 rho_inf = 1.2;
 M = 0.2;
 
-a= rms(TTP_6_th)./cons;
+
 cons = (rho_inf/rho_sl)*((M^2)+2.2*(25/298.9833));
+a= rms(TTP_6_th)./cons;
 x = [1 2 3 4 5 6];
 y = [rms(TTP_1_th)./cons rms(TTP_2_th)./cons rms(TTP_3_th)./cons rms(TTP_4_th)./cons rms(TTP_5_th)./cons rms(TTP_6_th)./cons] - a;
 
