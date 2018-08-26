@@ -22,12 +22,18 @@ TTP_4 = TTP_store.four;
 TTP_5 = TTP_store.five;
 TTP_6 = TTP_store.six;
 
-TTP_1_th  = atan((TTP_1(1, :)/(10^6))./(delta));
-TTP_2_th  = atan((TTP_2(1, :)/(10^6))./(2*delta));
-TTP_3_th  = atan((TTP_3(1, :)/(10^6))./(3*delta));
-TTP_4_th  = atan((TTP_4(1, :)/(10^6))./(4*delta));
-TTP_5_th  = atan((TTP_5(1, :)/(10^6))./(5*delta));
-TTP_6_th  = atan((TTP_6(1, :)/(10^6))./(6*delta));
+% TTP_1_th  = atan((TTP_1(1, :)/(10^6))./(delta));
+% TTP_2_th  = atan((TTP_2(1, :)/(10^6))./(2*delta));
+% TTP_3_th  = atan((TTP_3(1, :)/(10^6))./(3*delta));
+% TTP_4_th  = atan((TTP_4(1, :)/(10^6))./(4*delta));
+% TTP_5_th  = atan((TTP_5(1, :)/(10^6))./(5*delta));
+% TTP_6_th  = atan((TTP_6(1, :)/(10^6))./(6*delta));
+TTP_1_th  = (TTP_1(1, :)/(10^6));
+TTP_2_th  = (TTP_2(1, :)/(10^6));
+TTP_3_th  = (TTP_3(1, :)/(10^6));
+TTP_4_th  = (TTP_4(1, :)/(10^6));
+TTP_5_th  = (TTP_5(1, :)/(10^6));
+TTP_6_th  = (TTP_6(1, :)/(10^6));
 
 %% Jitter PDF
 [n1,x1] = hist(TTP_1_th./rms(TTP_1_th), 20);
@@ -68,10 +74,13 @@ rho_sl = 1.225;
 rho_inf = 1.2;
 M = 0.2;
 
+data_jitter.one.x(1, end)
 
 cons = (rho_inf/rho_sl)*((M^2)+2.2*(25/298.9833));
 a= rms(TTP_6_th)./cons;
-x = [1 2 3 4 5 6];
+x = [data_jitter.one.x(1, end) data_jitter.two.x(1, end) ...
+    data_jitter.three.x(1, end) data_jitter.four.x(1, end) ...
+    data_jitter.five.x(1, end) data_jitter.six.x(1, end)];
 y = [rms(TTP_1_th)./cons rms(TTP_2_th)./cons rms(TTP_3_th)./cons rms(TTP_4_th)./cons rms(TTP_5_th)./cons rms(TTP_6_th)./cons] - a;
 
 figure();

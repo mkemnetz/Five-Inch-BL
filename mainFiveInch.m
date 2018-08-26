@@ -64,6 +64,7 @@ trim          = [2; 32; 7; 60];  % 11-31 Data
 x_Final_m     = cat(3,x_Final{:});
 y_Final_m     = cat(3,y_Final{:});
 phase_Final_m = cat(3,phase_Final{:});
+phase_Final_m = phase_Final_m.*2;  %
 x_Final_m     = trimMat(x_Final_m, trim);
 y_Final_m     = trimMat(y_Final_m, trim);
 phase_Final_m = trimMat(phase_Final_m, trim);
