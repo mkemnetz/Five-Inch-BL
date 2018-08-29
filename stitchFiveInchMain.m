@@ -83,7 +83,7 @@ multiWaitbar( 'Overall Progress', 'Increment', 1/numberOfSteps );
 
 %% 6
 fprintf('Stitching...\n');
-multiWaitbar( 'Stitching...', 0.5, 'Color', 'r' );
+multiWaitbar( 'Stitching...', 0, 'Color', 'r' );
 
 stitchFiveInch;
 
