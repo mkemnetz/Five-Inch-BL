@@ -39,14 +39,28 @@ xlim([0.05 10]);
 ylim([1e-6 1e-4]);
 
 delta           = 0.24;
-theta_modeled_filtered  = theta_modeled.*(Gst(1, St_d, delta)).^2;
+theta_modeled_filtered1  = theta_modeled.*(Gst(1*delta, St_d, delta)).^2;
+theta_modeled_filtered3  = theta_modeled.*(Gst(3*delta, St_d, delta)).^2;
+theta_modeled_filtered5  = theta_modeled.*(Gst(5*delta, St_d, delta)).^2;
 
 figure();
-loglog(St_d, theta_modeled, 'b');
+set(gcf,'PaperUnits', 'centimeters','PaperPosition', [0 0 10 6], 'PaperSize', [10 6]);
+set(gcf,'Units', 'centimeters','Position', [0 0 10 6]);
+loglog(St_d, theta_modeled, '-b');
 hold on;
-loglog(St_d, theta_modeled_filtered, 'r');
+loglog(St_d, theta_modeled_filtered1, '-.r');
+loglog(St_d, theta_modeled_filtered3, '--g');
+loglog(St_d, theta_modeled_filtered5, ':k');
 xlim([0.05 10]);
-ylim([1e-6 1e-4]);
+ylim([1e-6 4e-5]);
+grid on;
+
+xlabel('$St$', 'interpreter', 'latex');
+ylabel('$\hat{\theta}$', 'Interpreter', 'Latex');
+hleg = legend({'Empiracally Fit $\hat{\theta}$', '$Ap/\delta = 1$', '$Ap/\delta = 3$', '$Ap/\delta = 5$'}, 'Location','northwest');
+set(hleg, 'interpreter', 'latex');
+set(hleg, 'location', 'southeast');
+
 
 %% Adam's spectra (frequency space)
 f                        = 0:1:1e5;
