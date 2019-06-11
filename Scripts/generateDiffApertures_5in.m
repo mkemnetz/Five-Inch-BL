@@ -1,3 +1,5 @@
+%  one 4-26-19 I changed all: (TTP_ts.one.one(1, :)/(10^6)) to (TTP_ts.one.one(1, :)) to fix units 
+
 %% One
 %  Ap/ d = 1
 [WF_ts.one.one, x_ts.one.one, y_ts.one.one, TTP_ts.one.one] = ...
@@ -8,7 +10,7 @@
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 200000); 
                                    
-TTP_ts.one.one  = (TTP_ts.one.one(1, :)/(10^6));
+TTP_ts.one.one  = (TTP_ts.one.one(1, :));
 
 %  Ap/ d = 3
 [WF_ts.one.three, x_ts.one.three, y_ts.one.three, TTP_ts.one.three] = ...
@@ -19,7 +21,7 @@ TTP_ts.one.one  = (TTP_ts.one.one(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 200000); 
                                    
-TTP_ts.one.three  = (TTP_ts.one.three(1, :)/(10^6));
+TTP_ts.one.three  = (TTP_ts.one.three(1, :));
 
 %  Ap/ d = 5
 [WF_ts.one.five, x_ts.one.five, y_ts.one.five, TTP_ts.one.five] = ...
@@ -30,7 +32,7 @@ TTP_ts.one.three  = (TTP_ts.one.three(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 200000); 
                                    
-TTP_ts.one.five  = (TTP_ts.one.five(1, :)/(10^6));
+TTP_ts.one.five  = (TTP_ts.one.five(1, :));
 
 %  Ap/ d = 10
 [WF_ts.one.ten, x_ts.one.ten, y_ts.one.ten, TTP_ts.one.ten] = ...
@@ -41,7 +43,7 @@ TTP_ts.one.five  = (TTP_ts.one.five(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 200000);  
                                    
-TTP_ts.one.ten  = (TTP_ts.one.ten(1, :)/(10^6));
+TTP_ts.one.ten  = (TTP_ts.one.ten(1, :));
 
 %  Ap/ d = 20
 [WF_ts.one.twenty, x_ts.one.twenty, y_ts.one.twenty, TTP_ts.one.twenty] = ...
@@ -52,7 +54,7 @@ TTP_ts.one.ten  = (TTP_ts.one.ten(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 200000);  
                                    
-TTP_ts.one.twenty  = (TTP_ts.one.twenty(1, :)/(10^6));
+TTP_ts.one.twenty  = (TTP_ts.one.twenty(1, :));
 
 %  RMS Jitter
 rho_sl  = 1.225;
@@ -74,7 +76,7 @@ jitter.one = [rms(TTP_ts.one.one)./cons rms(TTP_ts.one.three)./cons rms(TTP_ts.o
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771); 
                                    
-TTP_ts.two.one  = (TTP_ts.two.one(1, :)/(10^6));
+TTP_ts.two.one  = (TTP_ts.two.one(1, :));
 
 %  Ap/ d = 3
 [WF_ts.two.three, x_ts.two.three, y_ts.two.three, TTP_ts.two.three] = ...
@@ -85,7 +87,7 @@ TTP_ts.two.one  = (TTP_ts.two.one(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771); 
                                    
-TTP_ts.two.three  = (TTP_ts.two.three(1, :)/(10^6));
+TTP_ts.two.three  = (TTP_ts.two.three(1, :));
 
 %  Ap/ d = 5
 [WF_ts.two.five, x_ts.two.five, y_ts.two.five, TTP_ts.two.five] = ...
@@ -96,7 +98,7 @@ TTP_ts.two.three  = (TTP_ts.two.three(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771); 
                                    
-TTP_ts.two.five  = (TTP_ts.two.five(1, :)/(10^6));
+TTP_ts.two.five  = (TTP_ts.two.five(1, :));
 
 %  Ap/ d = 10
 [WF_ts.two.ten, x_ts.two.ten, y_ts.two.ten, TTP_ts.two.ten] = ...
@@ -107,7 +109,7 @@ TTP_ts.two.five  = (TTP_ts.two.five(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771);  
                                    
-TTP_ts.two.ten  = (TTP_ts.two.ten(1, :)/(10^6));
+TTP_ts.two.ten  = (TTP_ts.two.ten(1, :));
 
 %  Ap/ d = 20
 [WF_ts.two.twenty, x_ts.two.twenty, y_ts.two.twenty, TTP_ts.two.twenty] = ...
@@ -118,7 +120,7 @@ TTP_ts.two.ten  = (TTP_ts.two.ten(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771);  
                                    
-TTP_ts.two.twenty  = (TTP_ts.two.twenty(1, :)/(10^6));
+TTP_ts.two.twenty  = (TTP_ts.two.twenty(1, :));
 
 %  RMS Jitter
 rho_sl  = 1.225;
@@ -141,7 +143,7 @@ jitter.two = [rms(TTP_ts.two.one)./cons rms(TTP_ts.two.three)./cons rms(TTP_ts.t
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771); 
                                    
-TTP_ts.three.one  = (TTP_ts.three.one(1, :)/(10^6));
+TTP_ts.three.one  = (TTP_ts.three.one(1, :));
 
 %  Ap/ d = 3
 [WF_ts.three.three, x_ts.three.three, y_ts.three.three, TTP_ts.three.three] = ...
@@ -152,7 +154,7 @@ TTP_ts.three.one  = (TTP_ts.three.one(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771); 
                                    
-TTP_ts.three.three  = (TTP_ts.three.three(1, :)/(10^6));
+TTP_ts.three.three  = (TTP_ts.three.three(1, :));
 
 %  Ap/ d = 5
 [WF_ts.three.five, x_ts.three.five, y_ts.three.five, TTP_ts.three.five] = ...
@@ -163,7 +165,7 @@ TTP_ts.three.three  = (TTP_ts.three.three(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771); 
                                    
-TTP_ts.three.five  = (TTP_ts.three.five(1, :)/(10^6));
+TTP_ts.three.five  = (TTP_ts.three.five(1, :));
 
 %  Ap/ d = 10
 [WF_ts.three.ten, x_ts.three.ten, y_ts.three.ten, TTP_ts.three.ten] = ...
@@ -174,7 +176,7 @@ TTP_ts.three.five  = (TTP_ts.three.five(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771);  
                                    
-TTP_ts.three.ten  = (TTP_ts.three.ten(1, :)/(10^6));
+TTP_ts.three.ten  = (TTP_ts.three.ten(1, :));
 
 %  Ap/ d = 20
 [WF_ts.three.twenty, x_ts.three.twenty, y_ts.three.twenty, TTP_ts.three.twenty] = ...
@@ -185,7 +187,7 @@ TTP_ts.three.ten  = (TTP_ts.three.ten(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771);  
                                    
-TTP_ts.three.twenty  = (TTP_ts.three.twenty(1, :)/(10^6));
+TTP_ts.three.twenty  = (TTP_ts.three.twenty(1, :));
 
 %  RMS Jitter
 rho_sl  = 1.225;
@@ -208,7 +210,7 @@ jitter.three = [rms(TTP_ts.three.one)./cons rms(TTP_ts.three.three)./cons rms(TT
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771); 
                                    
-TTP_ts.six.one  = (TTP_ts.six.one(1, :)/(10^6));
+TTP_ts.six.one  = (TTP_ts.six.one(1, :));
 
 %  Ap/ d = 3
 [WF_ts.six.three, x_ts.six.three, y_ts.six.three, TTP_ts.six.three] = ...
@@ -219,7 +221,7 @@ TTP_ts.six.one  = (TTP_ts.six.one(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771); 
                                    
-TTP_ts.six.three  = (TTP_ts.six.three(1, :)/(10^6));
+TTP_ts.six.three  = (TTP_ts.six.three(1, :));
 
 %  Ap/ d = 5
 [WF_ts.six.five, x_ts.six.five, y_ts.six.five, TTP_ts.six.five] = ...
@@ -230,7 +232,7 @@ TTP_ts.six.three  = (TTP_ts.six.three(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771); 
                                    
-TTP_ts.six.five  = (TTP_ts.six.five(1, :)/(10^6));
+TTP_ts.six.five  = (TTP_ts.six.five(1, :));
 
 %  Ap/ d = 10
 [WF_ts.six.ten, x_ts.six.ten, y_ts.six.ten, TTP_ts.six.ten] = ...
@@ -241,7 +243,7 @@ TTP_ts.six.five  = (TTP_ts.six.five(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771);  
                                    
-TTP_ts.six.ten  = (TTP_ts.six.ten(1, :)/(10^6));
+TTP_ts.six.ten  = (TTP_ts.six.ten(1, :));
 
 %  Ap/ d = 20
 [WF_ts.six.twenty, x_ts.six.twenty, y_ts.six.twenty, TTP_ts.six.twenty] = ...
@@ -252,7 +254,7 @@ TTP_ts.six.ten  = (TTP_ts.six.ten(1, :)/(10^6));
               'Uc', machToVel(0.2, 78.4), ...
               'fsamp', 97771);  
                                    
-TTP_ts.six.twenty  = (TTP_ts.six.twenty(1, :)/(10^6));
+TTP_ts.six.twenty  = (TTP_ts.six.twenty(1, :));
 
 %  RMS Jitter
 rho_sl  = 1.225;
@@ -267,7 +269,7 @@ jitter.six = [rms(TTP_ts.six.one)./cons rms(TTP_ts.six.three)./cons rms(TTP_ts.s
 
 %% Save
 save([save_dir 'stitch_jitter' '.mat'], 'Ap', 'jitter', '-mat', '-v7.3');
-
+save([save_dir 'stitched_variable_ap' '.mat'], 'WF_ts', 'x_ts', 'y_ts', 'TTP_ts', '-mat', '-v7.3');
 
 
 

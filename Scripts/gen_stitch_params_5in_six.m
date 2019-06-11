@@ -24,7 +24,7 @@ params.filterSize = 5;
 % computed conv speed to stitch the frames.  
 % true  => instantaneous computed conv speed
 % false => constant conv speed
-params.instantConv_flag = true;
+params.instantConv_flag = false;
 
 % Set a flag to decide if you want to use the tip, tilt, and piston 
 % correction.
@@ -42,7 +42,7 @@ params.T    = 78.4;
 params.expected_shift = 6;
 
 % Set the forced overlap used if the computer overlap is 0.
-params.forcedOverlap = 10;
+params.forcedOverlap = 4.2;
 
 % Set the sampling frequency used in the experiment.  Used to compute 
 % convective velocity 

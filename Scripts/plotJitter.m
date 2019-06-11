@@ -36,26 +36,31 @@ TTP_5_th  = (TTP_5(1, :)/(10^6));
 TTP_6_th  = (TTP_6(1, :)/(10^6));
 
 %% Jitter PDF
-[n1,x1] = hist(TTP_1_th./rms(TTP_1_th), 20);
-[n2,x2] = hist(TTP_2_th./rms(TTP_2_th), 20);
-[n3,x3] = hist(TTP_3_th./rms(TTP_3_th), 20);
-[n4,x4] = hist(TTP_4_th./rms(TTP_4_th), 20);
-[n5,x5] = hist(TTP_5_th./rms(TTP_5_th), 20);
-[n6,x6] = hist(TTP_6_th./rms(TTP_6_th), 20);
-
-normX = -3:0.001:3;
+[N1,edges1] = histcounts(TTP_1_th./rms(TTP_1_th), 20);
+[N2,edges2] = histcounts(TTP_2_th./rms(TTP_2_th), 20);
+[N3,edges3] = histcounts(TTP_3_th./rms(TTP_3_th), 20);
+[N4,edges4] = histcounts(TTP_4_th./rms(TTP_4_th), 20);
+[N5,edges5] = histcounts(TTP_5_th./rms(TTP_5_th), 20);
+[N6,edges6] = histcounts(TTP_6_th./rms(TTP_6_th), 20);
+x1          = 0.5 * (edges1(1:end-1) + edges1(2:end));
+x2          = 0.5 * (edges2(1:end-1) + edges2(2:end));
+x3          = 0.5 * (edges3(1:end-1) + edges3(2:end));
+x4          = 0.5 * (edges4(1:end-1) + edges4(2:end));
+x5          = 0.5 * (edges5(1:end-1) + edges5(2:end));
+x6          = 0.5 * (edges6(1:end-1) + edges6(2:end));
+normX       = -3:0.001:3;
 
 
 
 figure();
 set(gcf,'units','centimeters','position',[0 0 1.2*8.5 8.5]);
-plot(x1,n1/size(TTP_1_th, 2)/diff(x1(1:2)), '-')
+plot(x1,N1/size(TTP_1_th, 2)/diff(x1(1:2)), '-')
 hold on;
-plot(x2,n2/size(TTP_2_th, 2)/diff(x2(1:2)), '-')
-plot(x3,n3/size(TTP_3_th, 2)/diff(x3(1:2)), '-o')
-plot(x4,n4/size(TTP_4_th, 2)/diff(x4(1:2)), '-o')
-plot(x5,n5/size(TTP_5_th, 2)/diff(x5(1:2)), '-x')
-plot(x6,n6/size(TTP_6_th, 2)/diff(x6(1:2)), '-x')
+plot(x2,N2/size(TTP_2_th, 2)/diff(x2(1:2)), '-')
+plot(x3,N3/size(TTP_3_th, 2)/diff(x3(1:2)), '-o')
+plot(x4,N4/size(TTP_4_th, 2)/diff(x4(1:2)), '-o')
+plot(x5,N5/size(TTP_5_th, 2)/diff(x5(1:2)), '-x')
+plot(x6,h6.N6/size(TTP_6_th, 2)/diff(x6(1:2)), '-x')
 plot(normX,normpdf(normX,0,1), 'LineWidth',2)
 
 

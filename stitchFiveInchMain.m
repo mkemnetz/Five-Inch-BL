@@ -1,6 +1,6 @@
 %%
 clc;
-close all;
+closeALL;
 multiWaitbar( 'CloseAll' );
 multiWaitbar( 'Overall Progress', 0 , 'Color', 'b');
 

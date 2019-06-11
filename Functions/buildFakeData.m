@@ -1,4 +1,4 @@
-function [data] = buildFakeData(WF, x, y) 
+function [data] = buildFakeData_BL(WF, x, y) 
 %BUILDFAKEDATA - This function takes in the large 5in wavefronts and builds
 %five sets of data.  These represent separations of 0, 1, 2, 3, and 4 boundary
 %layer thicknesses.

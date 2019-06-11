@@ -95,10 +95,14 @@ for i = 1:n
 end
 
 %
-[WF_ts, TTP_rem] = removeTTP(WF, x, y);
-x_ts             = x;
-y_ts             = y;
+% [WF_ts, TTP_rem] = removeTTP(WF, x, y);
+% x_ts             = x;
+% y_ts             = y;
 
+% 4/24/29 - changing units to meters to be consistent.  
+[WF_ts, TTP_rem] = removeTTP(WF./1e6, x.*15.6e-3, y.*15.6e-3);
+x_ts             = x.*15.6e-3;
+y_ts             = y.*15.6e-3;
  
  
  
